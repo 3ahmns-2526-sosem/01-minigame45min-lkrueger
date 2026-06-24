@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ClickCounter : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class ClickCounter : MonoBehaviour
     public TextMeshProUGUI counter;
     public GameObject empty;
     public GameObject circle;
+    public GameObject reload;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         empty.SetActive(false);
+        reload.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class ClickCounter : MonoBehaviour
         if (clicK == 10)
         {
             empty.SetActive (true);
+            reload.SetActive (true);
             circle.SetActive (false);
         }
 
@@ -36,6 +40,6 @@ public class ClickCounter : MonoBehaviour
 
     public void RestartGame()
     {
-        
+        SceneManager.LoadScene(0);
     }
 }
